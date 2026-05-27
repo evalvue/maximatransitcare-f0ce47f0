@@ -77,11 +77,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Maxima Transit Care — Safe & Reliable NEMT Services" },
       { name: "description", content: "Premium non-emergency medical transportation across the USA — wheelchair, ambulatory, dialysis, hospital discharge, and stretcher services." },
       { name: "author", content: "Maxima Transit Care" },
-      { property: "og:title", content: "Maxima Transit Care — NEMT Services" },
-      { property: "og:description", content: "Safe, professional non-emergency medical transportation across the United States." },
+      { property: "og:title", content: "Maxima Transit Care — Safe & Reliable NEMT Services" },
+      { property: "og:description", content: "Premium non-emergency medical transportation across the USA — wheelchair, ambulatory, dialysis, hospital discharge, and stretcher services." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Maxima Transit Care — Safe & Reliable NEMT Services" },
+      { name: "twitter:description", content: "Premium non-emergency medical transportation across the USA — wheelchair, ambulatory, dialysis, hospital discharge, and stretcher services." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f2e215be-c163-4082-88fc-bd5b8685faf8/id-preview-bfa8ce2c--a25581d5-0717-435d-a174-8510a5d6f21f.lovable.app-1779870577252.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f2e215be-c163-4082-88fc-bd5b8685faf8/id-preview-bfa8ce2c--a25581d5-0717-435d-a174-8510a5d6f21f.lovable.app-1779870577252.png" },
     ],
     links: [
       {
