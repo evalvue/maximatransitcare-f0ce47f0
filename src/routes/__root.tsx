@@ -11,6 +11,7 @@ import {
 import appCss from "../styles.css?url";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 
 function NotFoundComponent() {
   return (
