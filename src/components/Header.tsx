@@ -15,6 +15,7 @@ export function Header() {
     { to: "/services", label: t("nav.services") },
     { to: "/fleet", label: t("nav.fleet") },
     { to: "/service-areas", label: t("nav.areas") },
+    { to: "/language-services", label: t("nav.languages") },
     { to: "/why-choose-us", label: t("nav.why") },
     { to: "/testimonials", label: t("nav.testimonials") },
     { to: "/contact", label: t("nav.contact") },
