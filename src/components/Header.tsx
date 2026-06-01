@@ -23,22 +23,41 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-sm">
+      {/* Top utility bar */}
+      <div className="hidden md:block bg-[color:var(--brand-blue)] text-white text-xs">
+        <div className="container-pro flex items-center justify-between h-9">
+          <span className="font-medium opacity-90">24/7 Non-Emergency Medical Transportation across the USA</span>
+          <div className="flex items-center gap-4">
+            <a href="tel:+18005551234" className="inline-flex items-center gap-1.5 font-semibold hover:text-[color:var(--brand-red)] transition-colors">
+              <Phone className="h-3.5 w-3.5" /> (800) 555-1234
+            </a>
+            <a href="mailto:info@maximatransitcare.com" className="hidden lg:inline font-medium opacity-90 hover:opacity-100">
+              info@maximatransitcare.com
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Main bar */}
       <div className="container-pro flex items-center justify-between gap-4 h-20">
-        <Link to="/" className="flex items-center gap-3 shrink-0">
-          <img src={logo} alt="Maxima Transit Care" className="h-12 w-12 md:h-14 md:w-14 object-contain" />
-          <div className="hidden sm:flex flex-col leading-tight">
+        <Link to="/" className="flex items-center gap-3 shrink-0 group">
+          <div className="relative">
+            <div className="absolute inset-0 rounded-full bg-[color:var(--brand-red)]/10 blur-md group-hover:bg-[color:var(--brand-red)]/20 transition-all" />
+            <img src={logo} alt="Maxima Transit Care" className="relative h-12 w-12 md:h-14 md:w-14 object-contain" />
+          </div>
+          <div className="flex flex-col leading-tight">
             <span className="font-extrabold text-[color:var(--brand-red)] text-lg md:text-xl tracking-tight">Maxima</span>
-            <span className="text-[11px] md:text-xs font-semibold text-[color:var(--brand-blue)] uppercase tracking-wider -mt-0.5">Transit Care</span>
+            <span className="text-[10px] md:text-[11px] font-bold text-[color:var(--brand-blue)] uppercase tracking-[0.18em] -mt-0.5">Transit Care</span>
           </div>
         </Link>
 
-        <nav className="hidden xl:flex items-center gap-1.5 flex-1 justify-center">
+        <nav className="hidden lg:flex items-center gap-1 flex-1 justify-center">
           {navItems.map((n) => (
             <Link
               key={n.to}
               to={n.to}
-              className="px-3.5 py-2 text-[13px] font-semibold rounded-full border border-[color:var(--brand-blue)]/15 text-[color:var(--brand-blue)] bg-white hover:bg-[color:var(--brand-blue)] hover:text-white hover:border-[color:var(--brand-blue)] hover:shadow-md transition-all duration-200"
-              activeProps={{ className: "px-3.5 py-2 text-[13px] font-semibold rounded-full bg-[color:var(--brand-red)] text-white border border-[color:var(--brand-red)] shadow-md hover:bg-[color:var(--brand-red)] hover:text-white hover:border-[color:var(--brand-red)]" }}
+              className="px-3 py-2 text-[12px] xl:text-[13px] font-semibold rounded-full border border-[color:var(--brand-blue)]/15 text-[color:var(--brand-blue)] bg-white hover:bg-[color:var(--brand-blue)] hover:text-white hover:border-[color:var(--brand-blue)] hover:shadow-md transition-all duration-200 whitespace-nowrap"
+              activeProps={{ className: "px-3 py-2 text-[12px] xl:text-[13px] font-semibold rounded-full bg-[color:var(--brand-red)] text-white border border-[color:var(--brand-red)] shadow-md whitespace-nowrap" }}
               activeOptions={{ exact: n.to === "/" }}
             >
               {n.label}
@@ -48,15 +67,12 @@ export function Header() {
 
         <div className="hidden md:flex items-center gap-2 shrink-0">
           <LanguageSwitcher />
-          <a href="tel:+18005551234" className="hidden lg:inline-flex items-center gap-1.5 text-sm font-semibold text-[color:var(--brand-blue)] hover:text-[color:var(--brand-red)] transition-colors">
-            <Phone className="h-4 w-4" /> (800) 555-1234
-          </a>
           <Link to="/booking" className="btn-primary hover:btn-primary-hover text-sm !py-2.5 !px-5">
             <Calendar className="h-4 w-4" /> {t("cta.book")}
           </Link>
         </div>
 
-        <div className="xl:hidden flex items-center gap-2">
+        <div className="lg:hidden flex items-center gap-2">
           <LanguageSwitcher compact />
           <button className="p-2 rounded-md hover:bg-secondary transition-colors" onClick={() => setOpen(!open)} aria-label="Menu">
             {open ? <X /> : <Menu />}
@@ -65,7 +81,7 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="xl:hidden border-t border-border bg-white">
+        <div className="lg:hidden border-t border-border bg-white">
           <div className="container-pro py-4 flex flex-col gap-1.5">
             {navItems.map((n) => (
               <Link key={n.to} to={n.to} onClick={() => setOpen(false)}
