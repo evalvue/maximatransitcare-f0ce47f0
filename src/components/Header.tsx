@@ -31,13 +31,13 @@ export function Header() {
           </div>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-2">
           {navItems.map((n) => (
             <Link
               key={n.to}
               to={n.to}
-              className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-[color:var(--brand-red)] transition-colors rounded-md"
-              activeProps={{ className: "px-3 py-2 text-sm font-semibold text-[color:var(--brand-red)] rounded-md" }}
+              className="px-4 py-2 text-sm font-semibold rounded-full border border-[color:var(--brand-blue)]/20 text-[color:var(--brand-blue)] bg-white hover:bg-[color:var(--brand-blue)] hover:text-white hover:border-[color:var(--brand-blue)] shadow-sm hover:shadow-md transition-all"
+              activeProps={{ className: "px-4 py-2 text-sm font-semibold rounded-full bg-[color:var(--brand-red)] text-white border border-[color:var(--brand-red)] shadow-md" }}
               activeOptions={{ exact: n.to === "/" }}
             >
               {n.label}
