@@ -13,6 +13,7 @@ import { Route as WhyChooseUsRouteImport } from './routes/why-choose-us'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ServiceAreasRouteImport } from './routes/service-areas'
+import { Route as LanguageServicesRouteImport } from './routes/language-services'
 import { Route as FleetRouteImport } from './routes/fleet'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BookingRouteImport } from './routes/booking'
@@ -37,6 +38,11 @@ const ServicesRoute = ServicesRouteImport.update({
 const ServiceAreasRoute = ServiceAreasRouteImport.update({
   id: '/service-areas',
   path: '/service-areas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LanguageServicesRoute = LanguageServicesRouteImport.update({
+  id: '/language-services',
+  path: '/language-services',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FleetRoute = FleetRouteImport.update({
@@ -71,6 +77,7 @@ export interface FileRoutesByFullPath {
   '/booking': typeof BookingRoute
   '/contact': typeof ContactRoute
   '/fleet': typeof FleetRoute
+  '/language-services': typeof LanguageServicesRoute
   '/service-areas': typeof ServiceAreasRoute
   '/services': typeof ServicesRoute
   '/testimonials': typeof TestimonialsRoute
@@ -82,6 +89,7 @@ export interface FileRoutesByTo {
   '/booking': typeof BookingRoute
   '/contact': typeof ContactRoute
   '/fleet': typeof FleetRoute
+  '/language-services': typeof LanguageServicesRoute
   '/service-areas': typeof ServiceAreasRoute
   '/services': typeof ServicesRoute
   '/testimonials': typeof TestimonialsRoute
@@ -94,6 +102,7 @@ export interface FileRoutesById {
   '/booking': typeof BookingRoute
   '/contact': typeof ContactRoute
   '/fleet': typeof FleetRoute
+  '/language-services': typeof LanguageServicesRoute
   '/service-areas': typeof ServiceAreasRoute
   '/services': typeof ServicesRoute
   '/testimonials': typeof TestimonialsRoute
@@ -107,6 +116,7 @@ export interface FileRouteTypes {
     | '/booking'
     | '/contact'
     | '/fleet'
+    | '/language-services'
     | '/service-areas'
     | '/services'
     | '/testimonials'
@@ -118,6 +128,7 @@ export interface FileRouteTypes {
     | '/booking'
     | '/contact'
     | '/fleet'
+    | '/language-services'
     | '/service-areas'
     | '/services'
     | '/testimonials'
@@ -129,6 +140,7 @@ export interface FileRouteTypes {
     | '/booking'
     | '/contact'
     | '/fleet'
+    | '/language-services'
     | '/service-areas'
     | '/services'
     | '/testimonials'
@@ -141,6 +153,7 @@ export interface RootRouteChildren {
   BookingRoute: typeof BookingRoute
   ContactRoute: typeof ContactRoute
   FleetRoute: typeof FleetRoute
+  LanguageServicesRoute: typeof LanguageServicesRoute
   ServiceAreasRoute: typeof ServiceAreasRoute
   ServicesRoute: typeof ServicesRoute
   TestimonialsRoute: typeof TestimonialsRoute
@@ -175,6 +188,13 @@ declare module '@tanstack/react-router' {
       path: '/service-areas'
       fullPath: '/service-areas'
       preLoaderRoute: typeof ServiceAreasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/language-services': {
+      id: '/language-services'
+      path: '/language-services'
+      fullPath: '/language-services'
+      preLoaderRoute: typeof LanguageServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/fleet': {
@@ -221,6 +241,7 @@ const rootRouteChildren: RootRouteChildren = {
   BookingRoute: BookingRoute,
   ContactRoute: ContactRoute,
   FleetRoute: FleetRoute,
+  LanguageServicesRoute: LanguageServicesRoute,
   ServiceAreasRoute: ServiceAreasRoute,
   ServicesRoute: ServicesRoute,
   TestimonialsRoute: TestimonialsRoute,
