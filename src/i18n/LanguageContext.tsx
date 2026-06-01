@@ -15,7 +15,7 @@ type Dict = Record<string, string>;
 const translations: Record<Lang, Dict> = {
   en: {
     "nav.home": "Home", "nav.about": "About", "nav.services": "Services", "nav.fleet": "Fleet",
-    "nav.areas": "Service Areas", "nav.why": "Why Us", "nav.testimonials": "Testimonials", "nav.contact": "Contact",
+    "nav.areas": "Service Areas", "nav.languages": "Language Services", "nav.why": "Why Us", "nav.testimonials": "Testimonials", "nav.contact": "Contact",
     "cta.book": "Book A Ride", "cta.call": "Call Now",
     "booking.title": "Book A Ride",
     "booking.subtitle": "Complete the steps below — our dispatch team will confirm your ride within minutes.",
@@ -36,7 +36,7 @@ const translations: Record<Lang, Dict> = {
   },
   es: {
     "nav.home": "Inicio", "nav.about": "Nosotros", "nav.services": "Servicios", "nav.fleet": "Flota",
-    "nav.areas": "Áreas", "nav.why": "Por qué nosotros", "nav.testimonials": "Testimonios", "nav.contact": "Contacto",
+    "nav.areas": "Áreas", "nav.languages": "Idiomas", "nav.why": "Por qué nosotros", "nav.testimonials": "Testimonios", "nav.contact": "Contacto",
     "cta.book": "Reservar viaje", "cta.call": "Llamar ahora",
     "booking.title": "Reservar un viaje",
     "booking.subtitle": "Complete los pasos a continuación — nuestro equipo confirmará su viaje en minutos.",
@@ -57,7 +57,7 @@ const translations: Record<Lang, Dict> = {
   },
   hi: {
     "nav.home": "होम", "nav.about": "हमारे बारे में", "nav.services": "सेवाएँ", "nav.fleet": "वाहन",
-    "nav.areas": "सेवा क्षेत्र", "nav.why": "हम क्यों", "nav.testimonials": "प्रशंसापत्र", "nav.contact": "संपर्क",
+    "nav.areas": "सेवा क्षेत्र", "nav.languages": "भाषा सेवाएँ", "nav.why": "हम क्यों", "nav.testimonials": "प्रशंसापत्र", "nav.contact": "संपर्क",
     "cta.book": "राइड बुक करें", "cta.call": "कॉल करें",
     "booking.title": "राइड बुक करें",
     "booking.subtitle": "नीचे दिए गए चरण पूरे करें — हमारी टीम मिनटों में पुष्टि करेगी।",
@@ -78,7 +78,7 @@ const translations: Record<Lang, Dict> = {
   },
   ur: {
     "nav.home": "ہوم", "nav.about": "ہمارے بارے میں", "nav.services": "خدمات", "nav.fleet": "گاڑیاں",
-    "nav.areas": "علاقے", "nav.why": "ہم کیوں", "nav.testimonials": "آراء", "nav.contact": "رابطہ",
+    "nav.areas": "علاقے", "nav.languages": "زبان کی خدمات", "nav.why": "ہم کیوں", "nav.testimonials": "آراء", "nav.contact": "رابطہ",
     "cta.book": "رائیڈ بک کریں", "cta.call": "ابھی کال کریں",
     "booking.title": "رائیڈ بک کریں",
     "booking.subtitle": "نیچے دیے گئے مراحل مکمل کریں — ہماری ٹیم منٹوں میں تصدیق کرے گی۔",
@@ -99,7 +99,7 @@ const translations: Record<Lang, Dict> = {
   },
   ar: {
     "nav.home": "الرئيسية", "nav.about": "من نحن", "nav.services": "الخدمات", "nav.fleet": "الأسطول",
-    "nav.areas": "مناطق الخدمة", "nav.why": "لماذا نحن", "nav.testimonials": "آراء", "nav.contact": "اتصل بنا",
+    "nav.areas": "مناطق الخدمة", "nav.languages": "خدمات اللغة", "nav.why": "لماذا نحن", "nav.testimonials": "آراء", "nav.contact": "اتصل بنا",
     "cta.book": "احجز رحلة", "cta.call": "اتصل الآن",
     "booking.title": "احجز رحلة",
     "booking.subtitle": "أكمل الخطوات أدناه — سيؤكد فريقنا حجزك خلال دقائق.",
