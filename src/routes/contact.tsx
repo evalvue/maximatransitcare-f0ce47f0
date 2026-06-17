@@ -40,6 +40,11 @@ function ContactPage() {
       return;
     }
     setErrors({});
+    const subject = encodeURIComponent(`Website inquiry from ${res.data.name}`);
+    const body = encodeURIComponent(
+      `Name: ${res.data.name}\nPhone: ${res.data.phone}\nEmail: ${res.data.email}\n\nMessage:\n${res.data.message}`,
+    );
+    window.location.href = `mailto:info@maximatransitcare.com?subject=${subject}&body=${body}`;
     setSent(true);
   }
 
@@ -55,19 +60,25 @@ function ContactPage() {
             {[
               { icon: Phone, label: "Phone", value: "(800) 555-1234", href: "tel:+18005551234" },
               { icon: Mail, label: "Email", value: "info@maximatransitcare.com", href: "mailto:info@maximatransitcare.com" },
-              { icon: MapPin, label: "Office", value: "123 Healthcare Blvd, USA" },
+              { icon: MapPin, label: "Office", value: "United States" },
               { icon: Clock, label: "Hours", value: "24/7 Dispatch • Office: 8am–6pm" },
             ].map(item => (
-              <motion.a key={item.label} href={item.href ?? "#"} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+              <motion.div key={item.label} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
                 className="flex items-start gap-4 p-5 rounded-2xl bg-white border border-border hover:border-[color:var(--brand-red)]/40 shadow-[var(--shadow-card)] transition">
                 <div className="h-12 w-12 rounded-xl bg-[color:var(--brand-red)]/10 text-[color:var(--brand-red)] flex items-center justify-center shrink-0">
                   <item.icon className="h-6 w-6" />
                 </div>
                 <div>
                   <div className="text-xs uppercase font-bold tracking-wider text-muted-foreground">{item.label}</div>
-                  <div className="font-semibold text-[color:var(--brand-blue-deep)]">{item.value}</div>
+                  {item.href ? (
+                    <a href={item.href} className="font-semibold text-[color:var(--brand-blue-deep)] hover:text-[color:var(--brand-red)]">
+                      {item.value}
+                    </a>
+                  ) : (
+                    <div className="font-semibold text-[color:var(--brand-blue-deep)]">{item.value}</div>
+                  )}
                 </div>
-              </motion.a>
+              </motion.div>
             ))}
             <div className="rounded-2xl overflow-hidden border border-border shadow-[var(--shadow-card)] aspect-video bg-secondary">
               <iframe
