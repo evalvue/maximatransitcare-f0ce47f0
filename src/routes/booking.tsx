@@ -108,6 +108,31 @@ function BookingPage() {
       return;
     }
     setErrors({});
+    const subject = encodeURIComponent(`Ride booking request from ${res.data.name}`);
+    const body = encodeURIComponent(
+      [
+        `Patient Name: ${res.data.name}`,
+        `Phone: ${res.data.phone}`,
+        `Email: ${res.data.email}`,
+        `Date of Birth: ${res.data.dob || "N/A"}`,
+        `Weight: ${res.data.weight || "N/A"}`,
+        `Pickup: ${res.data.pickup}`,
+        `Destination: ${res.data.destination}`,
+        `Appointment Date: ${res.data.date}`,
+        `Appointment Time: ${res.data.time}`,
+        `Mobility: ${res.data.mobility}`,
+        `Round Trip: ${res.data.roundTrip ? `Yes${res.data.returnTime ? `, return ${res.data.returnTime}` : ""}` : "No"}`,
+        `Additional Passengers: ${res.data.passengers}`,
+        `Oxygen: ${res.data.oxygen ? "Yes" : "No"}`,
+        `Medical Attendant: ${res.data.attendant ? "Yes" : "No"}`,
+        `Stairs Assistance: ${res.data.stairs ? "Yes" : "No"}`,
+        `Own Wheelchair: ${res.data.wheelchairOwn ? "Yes" : "No"}`,
+        `Insurance / Payment: ${res.data.insurance}`,
+        `Policy / Member ID: ${res.data.policy || "N/A"}`,
+        `Notes: ${res.data.notes || "N/A"}`,
+      ].join("\n"),
+    );
+    window.location.href = `mailto:info@maximatransitcare.com?subject=${subject}&body=${body}`;
     setSubmitted(true);
   }
 
